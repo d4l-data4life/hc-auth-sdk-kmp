@@ -15,7 +15,7 @@
  */
 package care.data4life.sdk.auth
 
-import com.palantir.gradle.gitversion.VersionDetails
+import care.data4life.gradle.gitversion.VersionDetails
 import org.gradle.kotlin.dsl.creating
 import org.gradle.kotlin.dsl.extra
 
@@ -55,7 +55,7 @@ import org.gradle.kotlin.dsl.extra
  * - ./gradlew versionInfo
  */
 plugins {
-    id("com.palantir.git-version")
+    id("care.data4life.git-version")
 }
 
 val versionDetails: groovy.lang.Closure<VersionDetails> by extra

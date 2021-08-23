@@ -43,7 +43,8 @@ object Repository {
         "care.data4life.hc-util-test-sdk-kmp",
         "care.data4life.hc-fhir-sdk-kmp",
         "care.data4life.hc-fhir-helper-sdk-kmp",
-        "care.data4life.d4l-data-donation-sdk-kmp"
+        "care.data4life.d4l-data-donation-sdk-kmp",
+        "care.data4life.gradle.gitversion"
     )
 }
 
