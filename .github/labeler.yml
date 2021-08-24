@@ -2,7 +2,7 @@ build:
   - .github/**/*
 
 scripts:
-  - buildSrc/src/main/kotlin/carte/data4life/sdk/script/**/*.kts
+  - buildSrc/src/main/kotlin/care/data4life/sdk/auth/**/*.kts
 
 dependencies:
   - buildSrc/**/*
@@ -17,8 +17,8 @@ documentation:
   - readmeOSS.adoc
 
 # Library
-securestore:
-  - securestore/**/*
+auth:
+  - auth/**/*
 
 # Sample Apps
 sample-android:
