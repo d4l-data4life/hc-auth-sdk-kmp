@@ -34,6 +34,8 @@ See link:{link-repository}/compare/v1.13.2...main[changeset]
 
 === Changed
 
+* project configuration to latest iteration
+
 === Removed
 
 === Fixed
@@ -41,6 +43,8 @@ See link:{link-repository}/compare/v1.13.2...main[changeset]
 === Security
 
 === Bumped
+
+* Bump Gradle 6.9 -> 6.9.1
 
 === Deprecated
 
