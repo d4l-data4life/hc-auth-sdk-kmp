@@ -33,7 +33,7 @@ object Version {
 
     object GradlePlugin {
         const val kotlin = Version.kotlin
-        const val android = "4.2.1"
+        const val android = "4.2.2"
     }
 
     object Multiplatform {
@@ -68,7 +68,7 @@ object Version {
             /**
              * [hc-util-kmp](https://github.com/d4l-data4life/hc-util-kmp)
              */
-            const val utilSdk = "1.8.0"
+            const val utilSdk = "1.10.0"
         }
     }
 
@@ -111,9 +111,9 @@ object Version {
              * [AndroidX](https://developer.android.com/jetpack/androidx)
              */
             const val core = "1.1.0"
-            const val ktx = "1.3.2"
-            const val appCompat = "1.3.0"
-            const val browser = "1.2.0"
+            const val ktx = "1.6.0"
+            const val appCompat = "1.3.1"
+            const val browser = "1.3.0"
 
             const val constraintLayout = "2.0.1"
         }
