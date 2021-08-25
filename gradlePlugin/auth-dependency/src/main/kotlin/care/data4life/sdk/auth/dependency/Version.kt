@@ -116,7 +116,7 @@ object Version {
              * [AndroidX](https://developer.android.com/jetpack/androidx)
              */
             const val core = "1.1.0"
-            const val ktx = "1.6.0"
+            const val ktx = "1.3.2"
             const val appCompat = "1.3.1"
             const val browser = "1.3.0"
 
