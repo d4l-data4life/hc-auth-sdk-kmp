@@ -32,7 +32,7 @@ See link:{link-repository}/compare/v1.13.2...main[changeset]
 
 === Added
 
-* HC Result SDK 0.1.1
+* HC Result SDK 0.2.0
 
 === Changed
 
