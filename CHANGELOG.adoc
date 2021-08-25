@@ -42,6 +42,8 @@ See link:{link-repository}/compare/v1.13.2...main[changeset]
 
 === Fixed
 
+* ActivityNotFoundException on Android 11+ when trying to login
+
 === Security
 
 === Bumped
@@ -52,6 +54,7 @@ See link:{link-repository}/compare/v1.13.2...main[changeset]
 * AndroidX Ktx 1.3.2 -> 1.6.0
 * AndroidX AppCompat 1.3.0 -> 1.3.1
 * AndroidX Browser 1.2.0 -> 1.3.0
+* AppAuth from custom patched version -> official 0.10.0
 
 === Deprecated
 

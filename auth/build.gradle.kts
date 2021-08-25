@@ -68,7 +68,7 @@ kotlin {
 
                 implementation(Dependency.android.androidX.appCompat)
                 implementation(Dependency.android.androidX.browser)
-                implementation(Dependency.android.appAuthPatch)
+                implementation(Dependency.android.appAuth)
                 implementation(Dependency.android.tink)
             }
         }

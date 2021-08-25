@@ -20,15 +20,19 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import care.data4life.sdk.auth.storage.InMemoryAuthStorage
-import kotlinx.coroutines.runBlocking
 import net.openid.appauth.AuthState
 import net.openid.appauth.AuthorizationRequest
 import net.openid.appauth.AuthorizationResponse
+import net.openid.appauth.AuthorizationService
 import net.openid.appauth.AuthorizationServiceConfiguration
 import net.openid.appauth.ClientAuthentication
 import net.openid.appauth.ClientSecretBasic
 import net.openid.appauth.ResponseTypeValues
+import net.openid.appauth.TokenRequest
+import net.openid.appauth.TokenResponse
 import org.json.JSONException
+import kotlinx.coroutines.runBlocking
+import kotlin.coroutines.suspendCoroutine
 
 actual class AuthorizationService internal constructor(
     private val appAuthService: AppAuthService,
@@ -143,18 +147,37 @@ actual class AuthorizationService internal constructor(
         throw AuthorizationException.FailedToRefreshAccessToken()
     }
 
-    private fun requestAccessToken(): AuthState {
+    private suspend fun requestAccessToken(): AuthState {
         val state = readAuthState()
         val request = state?.createTokenRefreshRequest()
         val clientAuth: ClientAuthentication = ClientSecretBasic(configuration.clientSecret)
         request?.let {
-            val result = appAuthService.performSynchronousTokenRequest(request, clientAuth)
-            state.update(result.response, result.exception)
+            val result = requestTokenResponse(request, clientAuth)
+            state.update(result.tokenResponse, result.exception)
             result.exception?.let { throw it }
+
             return@requestAccessToken state
         }
 
         throw AuthorizationException.FailedToRestoreRefreshToken()
+    }
+
+    private data class TokenRequestData(
+        val tokenResponse: TokenResponse?,
+        val exception: net.openid.appauth.AuthorizationException?
+    )
+
+    private suspend fun requestTokenResponse(
+        request: TokenRequest,
+        clientAuth: ClientAuthentication
+    ): TokenRequestData {
+        return suspendCoroutine { continuation ->
+            val callback = AuthorizationService.TokenResponseCallback { response, ex ->
+                continuation.resumeWith(kotlin.Result.success(TokenRequestData(response, ex)))
+            }
+
+            appAuthService.performTokenRequest(request, clientAuth, callback)
+        }
     }
 
     private fun readAuthState(): AuthState? {

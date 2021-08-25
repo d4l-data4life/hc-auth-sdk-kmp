@@ -151,8 +151,11 @@ class AuthorizationServiceTest {
         val response = TokenResponse.jsonDeserialize(INTENT_PAYLOAD)
         every { storage.writeAuthState(any(), any()) } returns Unit
 
-        every { appAuthService.performSynchronousTokenRequest(any(), any()) } answers {
-            net.openid.appauth.AuthorizationService.SynchronousTokenRequestData(response, null)
+        every {
+            appAuthService.performTokenRequest(any(), any(), any())
+        } answers {
+            thirdArg<net.openid.appauth.AuthorizationService.TokenResponseCallback>()
+                .onTokenRequestCompleted(response, null)
         }
 
         val actual = sut.refreshAccessToken(USER_ALIAS)
@@ -234,7 +237,7 @@ class AuthorizationServiceTest {
         private const val APP_AUTH_INTENT_KEY = "net.openid.appauth.AuthorizationResponse"
         private const val AUTH_PACKAGE = "care.data4life.auth.auth_state"
         private const val AUTH_STORE_STRING =
-            """{"lastAuthorizationResponse":{"access_token":"mockAccessToken","request":{"redirectUri":"data4life:\/\/","codeVerifierChallengeMethod":"S256","responseType":"code","clientId":"android","configuration":{"tokenEndpoint":"http:\/\/192.168.10.142:8080\/token","authorizationEndpoint":"http:\/\/192.168.10.142:8080\/authorize"},"codeVerifier":"jQ0-3_485kOHjCdX_PC8rChb99AvmYxcC4YuMc9YaVSIj3x76u8jZkmsOdcT8qR58I0a87k8seOhhBHflF6y8g","codeVerifierChallenge":"QpwewXdsKSNJipXyhDEtbJj3lAytSaxxUAqcSxGBezQ","additionalParameters":{},"state":"pvh0eYcyno3PycYD40V7Hw"},"code":"dehvgDJnTlOrdfVj3ohvMQ","additional_parameters":{},"state":"pvh0eYcyno3PycYD40V7Hw"},"mLastTokenResponse":{"access_token":"mockAccessToken","request":{"redirectUri":"data4life:\/\/","clientId":"android","configuration":{"tokenEndpoint":"http:\/\/192.168.10.142:8080\/token","authorizationEndpoint":"http:\/\/192.168.10.142:8080\/authorize"},"additionalParameters":{},"grantType":"refresh_token","refreshToken":"mockRefreshToken"},"refresh_token":"mockRefreshToken","additionalParameters":{}},"refreshToken":"mockRefreshToken"}"""
+            """{"lastAuthorizationResponse":{"access_token":"mockAccessToken","request":{"redirectUri":"data4life:\/\/","codeVerifierChallengeMethod":"S256","responseType":"code","clientId":"android","configuration":{"tokenEndpoint":"http:\/\/192.168.10.142:8080\/token","authorizationEndpoint":"http:\/\/192.168.10.142:8080\/authorize"},"codeVerifier":"jQ0-3_485kOHjCdX_PC8rChb99AvmYxcC4YuMc9YaVSIj3x76u8jZkmsOdcT8qR58I0a87k8seOhhBHflF6y8g","codeVerifierChallenge":"QpwewXdsKSNJipXyhDEtbJj3lAytSaxxUAqcSxGBezQ","additionalParameters":{},"state":"pvh0eYcyno3PycYD40V7Hw"},"code":"dehvgDJnTlOrdfVj3ohvMQ","additional_parameters":{},"state":"pvh0eYcyno3PycYD40V7Hw"},"mLastTokenResponse":{"access_token":"mockAccessToken","request":{"redirectUri":"data4life:\/\/","clientId":"android","configuration":{"tokenEndpoint":"http:\/\/192.168.10.142:8080\/token","authorizationEndpoint":"http:\/\/192.168.10.142:8080\/authorize"},"codeVerifier":"jQ0-3_485kOHjCdX_PC8rChb99AvmYxcC4YuMc9YaVSIj3x76u8jZkmsOdcT8qR58I0a87k8seOhhBHflF6y8g","additionalParameters":{},"grantType":"refresh_token","refreshToken":"mockRefreshToken"},"refresh_token":"mockRefreshToken","additionalParameters":{}},"refreshToken":"mockRefreshToken"}"""
         private const val AUTH_STORE_MISSING_TOKEN =
             """{"lastAuthorizationResponse":{"request":{"redirectUri":"data4life:\/\/","codeVerifierChallengeMethod":"S256","responseType":"code","clientId":"android","configuration":{"tokenEndpoint":"http:\/\/192.168.10.142:8080\/token","authorizationEndpoint":"http:\/\/192.168.10.142:8080\/authorize"},"codeVerifier":"jQ0-3_485kOHjCdX_PC8rChb99AvmYxcC4YuMc9YaVSIj3x76u8jZkmsOdcT8qR58I0a87k8seOhhBHflF6y8g","codeVerifierChallenge":"QpwewXdsKSNJipXyhDEtbJj3lAytSaxxUAqcSxGBezQ","additionalParameters":{},"state":"pvh0eYcyno3PycYD40V7Hw"},"code":"dehvgDJnTlOrdfVj3ohvMQ","additional_parameters":{},"state":"pvh0eYcyno3PycYD40V7Hw"},"mLastTokenResponse":{"request":{"redirectUri":"data4life:\/\/","clientId":"android","configuration":{"tokenEndpoint":"http:\/\/192.168.10.142:8080\/token","authorizationEndpoint":"http:\/\/192.168.10.142:8080\/authorize"},"additionalParameters":{},"grantType":"refresh_token","refreshToken":"mockRefreshToken"},"additionalParameters":{}}}"""
         private const val AUTH_STORE_BROKEN_JSON = """{"lastAuthorizationResponse";"invalid""""

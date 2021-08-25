@@ -141,6 +141,25 @@ dependencies {
 }
 ----
 
+In case you target Android 11+ and experience a `ActivityNotFoundException`. This is caused by the changed link:https://developer.android.com/about/versions/11/privacy/package-visibility[package visibility in Android 11]. Please ensure that the following is part of your merged `AndroidManifest.xml`. In case not, add the following to your `AndroidManifest.xml` file:
+
+----
+<manifest>
+    <application>
+        ...
+    </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+</manifest>
+----
+
 == Usage
 
 TODO

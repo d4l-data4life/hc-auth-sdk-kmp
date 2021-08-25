@@ -147,7 +147,6 @@ object Dependency {
 
         // Authorization
         const val appAuth = "net.openid:appauth:${Version.android.appAuth}"
-        const val appAuthPatch = "com.github.gesundheitscloud:AppAuth-Android:${Version.android.appAuthPatch}"
 
         // Crypto
         const val tink = "com.google.crypto.tink:tink-android:${Version.android.tink}"
