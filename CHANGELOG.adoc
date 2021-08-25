@@ -32,6 +32,8 @@ See link:{link-repository}/compare/v1.13.2...main[changeset]
 
 === Added
 
+* HC Result SDK 0.1.1
+
 === Changed
 
 * project configuration to latest iteration
