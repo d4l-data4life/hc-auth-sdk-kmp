@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import care.data4life.sdk.auth.storage.InMemoryAuthStorage
+import kotlinx.coroutines.runBlocking
 import net.openid.appauth.AuthState
 import net.openid.appauth.AuthorizationRequest
 import net.openid.appauth.AuthorizationResponse
@@ -31,7 +32,6 @@ import net.openid.appauth.ResponseTypeValues
 import net.openid.appauth.TokenRequest
 import net.openid.appauth.TokenResponse
 import org.json.JSONException
-import kotlinx.coroutines.runBlocking
 import kotlin.coroutines.suspendCoroutine
 
 actual class AuthorizationService internal constructor(
