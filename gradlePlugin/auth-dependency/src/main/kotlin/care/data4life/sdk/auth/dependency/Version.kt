@@ -33,7 +33,7 @@ object Version {
 
     object GradlePlugin {
         const val kotlin = Version.kotlin
-        const val android = "4.2.1"
+        const val android = "4.2.2"
     }
 
     object Multiplatform {
@@ -68,7 +68,12 @@ object Version {
             /**
              * [hc-util-kmp](https://github.com/d4l-data4life/hc-util-kmp)
              */
-            const val utilSdk = "1.8.0"
+            const val utilSdk = "1.10.0"
+
+            /**
+             * [hc-result-sdk-kmp](https://github.com/d4l-data4life/hc-result-sdk-kmp)
+             */
+            const val resultSdk = "0.2.0"
         }
     }
 
@@ -112,8 +117,8 @@ object Version {
              */
             const val core = "1.1.0"
             const val ktx = "1.3.2"
-            const val appCompat = "1.3.0"
-            const val browser = "1.2.0"
+            const val appCompat = "1.3.1"
+            const val browser = "1.3.0"
 
             const val constraintLayout = "2.0.1"
         }
@@ -127,12 +132,7 @@ object Version {
         /**
          * [appAuth](https://github.com/openid/AppAuth-Android)
          */
-        const val appAuth = "0.7.1"
-
-        /**
-         * [appAuthPatch](https://github.com/gesundheitscloud/AppAuth-Android)
-         */
-        const val appAuthPatch = "9e3cc033ff"
+        const val appAuth = "0.10.0"
 
         // Serialization
         /**

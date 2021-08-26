@@ -32,15 +32,29 @@ See link:{link-repository}/compare/v1.13.2...main[changeset]
 
 === Added
 
+* HC Result SDK 0.2.0
+
 === Changed
+
+* project configuration to latest iteration
 
 === Removed
 
 === Fixed
 
+* ActivityNotFoundException on Android 11+ when trying to login
+
 === Security
 
 === Bumped
+
+* Bump Gradle 6.9 -> 6.9.1
+* Android Gradle Plugin 4.2.1 -> 4.2.2
+* HC Util SDK 1.8.0 -> 1.10.0
+* AndroidX Ktx 1.3.2 -> 1.6.0
+* AndroidX AppCompat 1.3.0 -> 1.3.1
+* AndroidX Browser 1.2.0 -> 1.3.0
+* AppAuth from custom patched version -> official 0.10.0
 
 === Deprecated
 

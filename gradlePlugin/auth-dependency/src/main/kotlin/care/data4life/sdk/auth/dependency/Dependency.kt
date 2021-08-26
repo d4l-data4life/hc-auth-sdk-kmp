@@ -69,6 +69,7 @@ object Dependency {
 
             val securestore = Securestore
             val util = Util
+            val result = Result
 
             object Securestore {
                 const val common = "care.data4life.hc-securestore-sdk-kmp:securestore:${Version.multiplatform.d4l.securestore}"
@@ -80,6 +81,12 @@ object Dependency {
                 const val common = "care.data4life.hc-util-sdk-kmp:util:${Version.multiplatform.d4l.utilSdk}"
                 const val android = "care.data4life.hc-util-sdk-kmp:util-android:${Version.multiplatform.d4l.utilSdk}"
                 const val jvm = "care.data4life.hc-util-sdk-kmp:util-jvm:${Version.multiplatform.d4l.utilSdk}"
+            }
+
+            object Result {
+                const val errorCommon = "care.data4life.hc-result-sdk-kmp:error:${Version.multiplatform.d4l.resultSdk}"
+                const val errorAndroid = "care.data4life.hc-result-sdk-kmp:error-android:${Version.multiplatform.d4l.resultSdk}"
+                const val errorJvm = "care.data4life.hc-result-sdk-kmp:error-jvm:${Version.multiplatform.d4l.resultSdk}"
             }
         }
     }
@@ -140,7 +147,6 @@ object Dependency {
 
         // Authorization
         const val appAuth = "net.openid:appauth:${Version.android.appAuth}"
-        const val appAuthPatch = "com.github.gesundheitscloud:AppAuth-Android:${Version.android.appAuthPatch}"
 
         // Crypto
         const val tink = "com.google.crypto.tink:tink-android:${Version.android.tink}"

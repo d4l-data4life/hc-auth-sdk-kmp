@@ -43,6 +43,7 @@ kotlin {
                 implementation(Dependency.multiplatform.kotlin.stdLib.common)
 
                 implementation(Dependency.multiplatform.d4l.util.common)
+                implementation(Dependency.multiplatform.d4l.result.errorCommon)
                 implementation(Dependency.multiplatform.d4l.securestore.common)
             }
         }
@@ -67,7 +68,7 @@ kotlin {
 
                 implementation(Dependency.android.androidX.appCompat)
                 implementation(Dependency.android.androidX.browser)
-                implementation(Dependency.android.appAuthPatch)
+                implementation(Dependency.android.appAuth)
                 implementation(Dependency.android.tink)
             }
         }
