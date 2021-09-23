@@ -14,7 +14,7 @@
  * contact D4L by email to help@data4life.care.
  */
 
-package care.data4life.sdk.auth
+package care.data4life.gradle.auth.script
 
 /**
  * Quality check to keep the code spotless using [Spotless](https://github.com/diffplug/spotless)
@@ -36,10 +36,10 @@ package care.data4life.sdk.auth
  *     gradlePluginPortal()
  * }
  *
- * Now just add id("care.data4life.sdk.auth.quality-spotless") to your rootProject build.gradle.kts plugins
+ * Now just add id("care.data4life.gradle.auth.script.quality-spotless") to your rootProject build.gradle.kts plugins
  *
  * plugins {
- *     id("care.data4life.sdk.auth.quality-spotless")
+ *     id("care.data4life.gradle.auth.script.quality-spotless")
  * }
  *
  * Usage:

@@ -14,27 +14,22 @@
  * contact D4L by email to help@data4life.care.
  */
 
-package care.data4life.sdk.auth
+package care.data4life.gradle.auth.config
 
-data class D4LClientConfig(
-    val platform: String,
-    val configs: Map<Environment, ClientConfig>
-) {
-    operator fun get(environment: Environment): ClientConfig {
-        return configs.getValue(environment)
+object AppConfig {
+
+    val android = AndroidConfig
+
+    const val group = LibraryConfig.group
+
+    object AndroidConfig {
+        const val minSdkVersion = LibraryConfig.AndroidLibraryConfig.minSdkVersion
+        const val compileSdkVersion = LibraryConfig.AndroidLibraryConfig.compileSdkVersion
+        const val targetSdkVersion = LibraryConfig.AndroidLibraryConfig.targetSdkVersion
+
+        const val versionCode = 1
+        const val versionName = "0.1.0"
+
+        const val applicationId = "$group.sample"
     }
-}
-
-data class ClientConfig(
-    val id: String,
-    val secret: String,
-    val redirectScheme: String
-)
-
-enum class Environment {
-    LOCAL,
-    DEVELOPMENT,
-    STAGING,
-    SANDBOX,
-    PRODUCTION
 }
