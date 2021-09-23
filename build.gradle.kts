@@ -19,13 +19,13 @@ import care.data4life.gradle.auth.dependency.gitHub
 import care.data4life.gradle.auth.dependency.jitPack
 
 plugins {
-    id("care.data4life.sdk.auth.dependency")
+    id("care.data4life.gradle.auth.dependency")
 
-    id("care.data4life.sdk.auth.dependency-updates")
-    id("care.data4life.sdk.auth.download-scripts")
-    id("care.data4life.sdk.auth.publishing")
-    id("care.data4life.sdk.auth.quality-spotless")
-    id("care.data4life.sdk.auth.versioning")
+    id("care.data4life.gradle.auth.script.dependency-updates")
+    id("care.data4life.gradle.auth.script.download-scripts")
+    id("care.data4life.gradle.auth.script.publishing")
+    id("care.data4life.gradle.auth.script.quality-spotless")
+    id("care.data4life.gradle.auth.script.versioning")
 }
 
 allprojects {

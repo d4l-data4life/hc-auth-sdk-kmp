@@ -18,7 +18,7 @@ import care.data4life.gradle.auth.dependency.d4l
 
 plugins {
     `kotlin-dsl`
-    id("care.data4life.sdk.auth.dependency")
+    id("care.data4life.gradle.auth.dependency")
 }
 
 repositories {
