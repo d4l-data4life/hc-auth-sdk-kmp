@@ -44,6 +44,8 @@ See link:{link-repository}/compare/v1.14.0...main[changeset]
 
 === Bumped
 
+* Gradle 6.9 -> 7.2
+
 === Migration
 
 == link:{link-repository}/tag/v1.14.0[1.14.0]
