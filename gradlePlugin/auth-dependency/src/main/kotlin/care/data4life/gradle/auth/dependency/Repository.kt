@@ -22,7 +22,6 @@ import org.gradle.kotlin.dsl.maven
 
 object Repository {
     private const val gitHubOrgD4l = "d4l-data4life"
-    private const val gitHubOrgGesundheitsloud = "gesundheitscloud"
 
     val github = listOf(
         // GitHub organization, GitHub repository name, Maven dependency group
@@ -37,6 +36,7 @@ object Repository {
         "care.data4life.hc-util-sdk-kmp",
         "care.data4life.hc-util-test-sdk-kmp",
         "care.data4life.hc-result-sdk-kmp",
+        "care.data4life.hc-securestore-sdk-kmp",
         "care.data4life.gradle.gitversion"
     )
 }
