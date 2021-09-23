@@ -14,7 +14,7 @@
  * contact D4L by email to help@data4life.care.
  */
 
-package care.data4life.sdk.auth
+package care.data4life.gradle.auth.script
 
 /**
  * Dependency update check task using [DependencyUpdates](https://github.com/ben-manes/gradle-versions-plugin)
@@ -27,10 +27,10 @@ package care.data4life.sdk.auth
  *     implementation("com.github.ben-manes:gradle-versions-plugin:0.38.0")
  * }
  *
- * Now just add id("care.data4life.sdk.auth.dependency-updates") to your project module build.gradle.kts plugins section
+ * Now just add id("care.data4life.gradle.auth.script.dependency-updates") to your project module build.gradle.kts plugins section
  *
  * plugins {
- *     id("care.data4life.sdk.auth.dependency-updates")
+ *     id("care.data4life.gradle.auth.script.dependency-updates")
  * }
  *
  * Usage:

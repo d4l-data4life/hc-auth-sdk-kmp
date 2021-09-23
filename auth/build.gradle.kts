@@ -14,8 +14,9 @@
  * contact D4L by email to help@data4life.care.
  */
 
-import care.data4life.sdk.auth.dependency.Dependency
-import care.data4life.sdk.auth.LibraryConfig
+import care.data4life.gradle.auth.config.LibraryConfig
+import care.data4life.gradle.auth.config.D4LConfigHelper
+import care.data4life.gradle.auth.dependency.Dependency
 
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
@@ -25,7 +26,7 @@ plugins {
     id("com.android.library")
 
     // Publish
-    id("care.data4life.sdk.auth.publishing-config")
+    id("care.data4life.gradle.auth.script.publishing-config")
 }
 
 group = LibraryConfig.group
@@ -180,14 +181,14 @@ android {
     }
 }
 
-val d4lClientConfig = care.data4life.sdk.auth.D4LConfigHelper.loadClientConfigAndroid("$rootDir")
+val d4lClientConfig = D4LConfigHelper.loadClientConfigAndroid("$rootDir")
 val jvmAssetsPath = "${projectDir}/src/jvmTest/resources"
 
 val provideTestConfig: Task by tasks.creating {
     doLast {
         val asset = File(jvmAssetsPath)
         if (!asset.exists()) asset.mkdirs()
-        File(jvmAssetsPath, "client_config.json").writeText(care.data4life.sdk.auth.D4LConfigHelper.toJson(d4lClientConfig))
+        File(jvmAssetsPath, "client_config.json").writeText(D4LConfigHelper.toJson(d4lClientConfig))
     }
 }
 

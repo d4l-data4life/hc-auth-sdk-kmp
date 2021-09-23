@@ -20,7 +20,7 @@ plugins {
 }
 
 // To make it available as direct dependency
-group = "care.data4life.sdk.auth.dependency"
+group = "care.data4life.gradle.auth.dependency"
 version = "1.0.0-SNAPSHOT"
 
 repositories {
@@ -28,8 +28,8 @@ repositories {
 }
 
 gradlePlugin {
-    plugins.register("care.data4life.sdk.auth.dependency") {
-        id = "care.data4life.sdk.auth.dependency"
-        implementationClass = "care.data4life.sdk.auth.dependency.DependencyPlugin"
+    plugins.register("care.data4life.gradle.auth.dependency") {
+        id = "care.data4life.gradle.auth.dependency"
+        implementationClass = "care.data4life.gradle.auth.dependency.DependencyPlugin"
     }
 }

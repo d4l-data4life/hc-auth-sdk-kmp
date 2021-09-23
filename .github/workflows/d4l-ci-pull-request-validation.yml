@@ -8,6 +8,7 @@ on:
       - release/*
       - feature/*
       - bugfix/*
+  workflow_dispatch:
 
 jobs:
   pull-request-validation:
@@ -26,8 +27,6 @@ jobs:
       D4L_CLIENT_CONFIG_ANDROID: ${{ secrets.D4L_CLIENT_CONFIG_ANDROID }}
 
     steps:
-      - name: Display runner context
-        run: hostname -s
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0

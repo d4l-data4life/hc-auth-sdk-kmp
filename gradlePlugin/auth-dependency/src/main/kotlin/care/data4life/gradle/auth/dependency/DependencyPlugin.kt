@@ -14,27 +14,14 @@
  * contact D4L by email to help@data4life.care.
  */
 
-package care.data4life.sdk.auth
+package care.data4life.gradle.auth.dependency
 
-data class D4LClientConfig(
-    val platform: String,
-    val configs: Map<Environment, ClientConfig>
-) {
-    operator fun get(environment: Environment): ClientConfig {
-        return configs.getValue(environment)
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+class DependencyPlugin : Plugin<Project> {
+
+    override fun apply(target: Project) {
+        // nothing to do
     }
-}
-
-data class ClientConfig(
-    val id: String,
-    val secret: String,
-    val redirectScheme: String
-)
-
-enum class Environment {
-    LOCAL,
-    DEVELOPMENT,
-    STAGING,
-    SANDBOX,
-    PRODUCTION
 }
