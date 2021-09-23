@@ -133,7 +133,7 @@ actual class AuthorizationService internal constructor(
 
     @Throws(AuthorizationException.FailedToRefreshAccessToken::class)
     actual override fun refreshAccessToken(alias: String): String {
-        var accessToken: String? = null
+        var accessToken: String?
         runBlocking {
             val state = requestAccessToken()
             writeAuthState(state)
