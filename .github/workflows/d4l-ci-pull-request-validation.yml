@@ -8,6 +8,7 @@ on:
       - release/*
       - feature/*
       - bugfix/*
+  workflow_dispatch:
 
 jobs:
   pull-request-validation:
@@ -23,11 +24,8 @@ jobs:
       PACKAGE_REGISTRY_DOWNLOAD_TOKEN: ${{ secrets.PACKAGE_REGISTRY_DOWNLOAD_TOKEN }}
       PACKAGE_REGISTRY_UPLOAD_USERNAME: ${{ secrets.PACKAGE_REGISTRY_UPLOAD_USERNAME }}
       PACKAGE_REGISTRY_UPLOAD_TOKEN: ${{ secrets.PACKAGE_REGISTRY_UPLOAD_TOKEN }}
-      D4L_CLIENT_CONFIG_ANDROID: ${{ secrets.D4L_CLIENT_CONFIG_ANDROID }}
 
     steps:
-      - name: Display runner context
-        run: hostname -s
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
