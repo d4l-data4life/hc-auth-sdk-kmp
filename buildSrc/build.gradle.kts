@@ -1,4 +1,4 @@
-import care.data4life.sdk.auth.dependency.d4l
+import care.data4life.gradle.auth.dependency.d4l
 
 /*
  * Copyright (c) 2021 D4L data4life gGmbH / All rights reserved.
@@ -29,8 +29,8 @@ repositories {
 }
 
 dependencies {
-    implementation(care.data4life.sdk.auth.dependency.GradlePlugin.kotlin)
-    implementation(care.data4life.sdk.auth.dependency.GradlePlugin.android)
+    implementation(care.data4life.gradle.auth.dependency.GradlePlugin.kotlin)
+    implementation(care.data4life.gradle.auth.dependency.GradlePlugin.android)
 
     // d4l config
     implementation("com.google.code.gson:gson:2.8.6")

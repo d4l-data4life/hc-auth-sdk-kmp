@@ -14,7 +14,7 @@
  * contact D4L by email to help@data4life.care.
  */
 
-import care.data4life.sdk.auth.dependency.Dependency
+import care.data4life.gradle.auth.dependency.Dependency
 
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
@@ -39,87 +39,87 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Dependency.multiplatform.kotlin.stdLib.common)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.kotlin.stdLib.common)
 
-                implementation(Dependency.multiplatform.d4l.util.common)
-                implementation(Dependency.multiplatform.d4l.result.errorCommon)
-                implementation(Dependency.multiplatform.d4l.securestore.common)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.d4l.util.common)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.d4l.result.errorCommon)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.d4l.securestore.common)
             }
         }
         val commonTest by getting {
             dependencies {
-                implementation(Dependency.multiplatformTest.kotlin.common)
-                implementation(Dependency.multiplatformTest.kotlin.commonAnnotations)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.common)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.commonAnnotations)
 
-                implementation(Dependency.multiplatformTest.mockK.common)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.mockK.common)
             }
         }
 
         val androidMain by getting {
             dependencies {
-                implementation(Dependency.multiplatform.kotlin.stdLib.android)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.kotlin.stdLib.android)
 
-                implementation(Dependency.android.androidX.ktx)
-                implementation(Dependency.multiplatform.kotlin.coroutines.android)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.android.androidX.ktx)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.kotlin.coroutines.android)
 
-                implementation(Dependency.multiplatform.d4l.util.android)
-                implementation(Dependency.multiplatform.d4l.securestore.android)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.d4l.util.android)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.d4l.securestore.android)
 
-                implementation(Dependency.android.androidX.appCompat)
-                implementation(Dependency.android.androidX.browser)
-                implementation(Dependency.android.appAuth)
-                implementation(Dependency.android.tink)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.android.androidX.appCompat)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.android.androidX.browser)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.android.appAuth)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.android.tink)
             }
         }
         val androidTest by getting {
             dependencies {
-                implementation(Dependency.multiplatformTest.kotlin.jvm)
-                implementation(Dependency.multiplatformTest.kotlin.jvmJunit)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.jvm)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.jvmJunit)
 
-                implementation(Dependency.multiplatformTest.mockK.junit)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.mockK.junit)
 
-                implementation(Dependency.androidTest.core)
-                implementation(Dependency.androidTest.robolectric)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.androidTest.core)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.androidTest.robolectric)
             }
         }
         val androidAndroidTest by getting {
             dependsOn(androidMain)
             dependencies {
-                implementation(Dependency.multiplatformTest.kotlin.jvm)
-                implementation(Dependency.multiplatformTest.kotlin.jvmJunit)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.jvm)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.jvmJunit)
 
-                implementation(Dependency.multiplatformTest.mockK.junit)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.mockK.junit)
 
-                implementation(Dependency.androidTest.runner)
-                implementation(Dependency.androidTest.espressoCore)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.androidTest.runner)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.androidTest.espressoCore)
             }
         }
 
         val jvmMain by getting {
             dependencies {
-                implementation(Dependency.multiplatform.kotlin.stdLib.jdk8)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.kotlin.stdLib.jdk8)
 
-                implementation(Dependency.multiplatform.d4l.util.jvm)
-                implementation(Dependency.multiplatform.d4l.securestore.jvm)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.d4l.util.jvm)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.d4l.securestore.jvm)
 
-                implementation(Dependency.jvm.moshi)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.jvm.moshi)
                 configurations["kapt"].dependencies.add(
-                    project.dependencies.create(Dependency.jvm.moshiCodeGen)
+                    project.dependencies.create(care.data4life.gradle.auth.dependency.Dependency.jvm.moshiCodeGen)
                 )
-                implementation(Dependency.jvm.scribeCore)
-                implementation(Dependency.multiplatform.kotlin.stdLib.jdk8)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.jvm.scribeCore)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatform.kotlin.stdLib.jdk8)
             }
         }
         val jvmTest by getting {
             dependencies {
-                implementation(Dependency.multiplatformTest.kotlin.jvm)
-                implementation(Dependency.multiplatformTest.kotlin.jvmJunit)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.jvm)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.kotlin.jvmJunit)
 
                 configurations["kaptTest"].dependencies.add(
-                    project.dependencies.create(Dependency.jvm.moshiCodeGen)
+                    project.dependencies.create(care.data4life.gradle.auth.dependency.Dependency.jvm.moshiCodeGen)
                 )
 
-                implementation(Dependency.multiplatformTest.mockK.junit)
+                implementation(care.data4life.gradle.auth.dependency.Dependency.multiplatformTest.mockK.junit)
             }
         }
     }

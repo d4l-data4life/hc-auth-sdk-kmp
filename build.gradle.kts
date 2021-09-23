@@ -14,9 +14,9 @@
  * contact D4L by email to help@data4life.care.
  */
 
-import care.data4life.sdk.auth.dependency.d4l
-import care.data4life.sdk.auth.dependency.gitHub
-import care.data4life.sdk.auth.dependency.jitPack
+import care.data4life.gradle.auth.dependency.d4l
+import care.data4life.gradle.auth.dependency.gitHub
+import care.data4life.gradle.auth.dependency.jitPack
 
 plugins {
     id("care.data4life.sdk.auth.dependency")
