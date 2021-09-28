@@ -63,7 +63,7 @@ object Version {
             /**
              * [hc-securestore-kmp](https://github.com/d4l-data4life/hc-securestore-kmp)
              */
-            const val securestore = "1.13.2-bump-updates-SNAPSHOT"
+            const val securestore = "1.14.0"
 
             /**
              * [hc-util-kmp](https://github.com/d4l-data4life/hc-util-kmp)
