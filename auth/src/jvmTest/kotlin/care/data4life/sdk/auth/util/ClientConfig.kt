@@ -45,7 +45,7 @@ enum class Environment {
     PRODUCTION;
 
     override fun toString(): String {
-        return super.toString().toLowerCase()
+        return super.toString().lowercase()
     }
 }
 
