@@ -55,7 +55,7 @@ object Version {
             /**
              * [DateTime](https://github.com/Kotlin/kotlinx-datetime)
              */
-            const val dateTime = "0.2.1"
+            const val dateTime = "0.3.2"
         }
 
         object D4L {
