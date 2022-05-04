@@ -38,6 +38,8 @@ See link:{link-repository}/compare/v1.14.0...main[changeset]
 
 === Removed
 
+* HC Result
+
 === Fixed
 
 === Security

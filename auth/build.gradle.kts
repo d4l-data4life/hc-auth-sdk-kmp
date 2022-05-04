@@ -44,7 +44,7 @@ kotlin {
                 implementation(Dependency.multiplatform.kotlin.stdLib.common)
 
                 implementation(Dependency.multiplatform.d4l.util.common)
-                implementation(Dependency.multiplatform.d4l.result.errorCommon)
+                implementation(Dependency.multiplatform.d4l.util.errorCommon)
                 implementation(Dependency.multiplatform.d4l.securestore.common)
             }
         }
