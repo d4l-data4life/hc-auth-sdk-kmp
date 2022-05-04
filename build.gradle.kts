@@ -15,6 +15,7 @@
  */
 
 import care.data4life.gradle.auth.dependency.d4l
+import care.data4life.gradle.auth.dependency.ensureKotlinVersion
 import care.data4life.gradle.auth.dependency.gitHub
 import care.data4life.gradle.auth.dependency.jitPack
 
@@ -39,9 +40,11 @@ allprojects {
 
         jitPack()
     }
+
+    ensureKotlinVersion()
 }
 
 tasks.named<Wrapper>("wrapper") {
-    gradleVersion = "7.2"
+    gradleVersion = "7.4.2"
     distributionType = Wrapper.DistributionType.ALL
 }

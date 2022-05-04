@@ -29,11 +29,11 @@ object Version {
     /**
      * [Kotlin](https://github.com/JetBrains/kotlin)
      */
-    const val kotlin = "1.5.21"
+    const val kotlin = "1.6.10"
 
     object GradlePlugin {
         const val kotlin = Version.kotlin
-        const val android = "7.0.2"
+        const val android = "7.1.3"
     }
 
     object Multiplatform {
@@ -45,17 +45,17 @@ object Version {
             /**
              * [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
              */
-            const val coroutines = "1.5.1-native-mt"
+            const val coroutines = "1.6.0-native-mt"
 
             /**
              * [Serialization](https://github.com/Kotlin/kotlinx.serialization)
              */
-            const val serialization = "1.2.2"
+            const val serialization = "1.3.2"
 
             /**
              * [DateTime](https://github.com/Kotlin/kotlinx-datetime)
              */
-            const val dateTime = "0.2.1"
+            const val dateTime = "0.3.2"
         }
 
         object D4L {
@@ -63,17 +63,12 @@ object Version {
             /**
              * [hc-securestore-kmp](https://github.com/d4l-data4life/hc-securestore-kmp)
              */
-            const val securestore = "1.14.0"
+            const val securestore = "1.15.0"
 
             /**
              * [hc-util-kmp](https://github.com/d4l-data4life/hc-util-kmp)
              */
-            const val utilSdk = "1.11.0"
-
-            /**
-             * [hc-result-sdk-kmp](https://github.com/d4l-data4life/hc-result-sdk-kmp)
-             */
-            const val resultSdk = "0.3.0"
+            const val utilSdk = "1.13.0"
         }
     }
 
@@ -89,13 +84,13 @@ object Version {
         /**
          * [scribe](https://github.com/scribejava/scribejava)
          */
-        const val scribe = "6.1.0"
+        const val scribe = "6.3.0"
 
         // Serialization
         /**
          * [moshi](https://github.com/square/moshi)
          */
-        const val moshi = "1.12.0"
+        const val moshi = "1.13.0"
     }
 
     object JvmTest {
@@ -109,42 +104,42 @@ object Version {
         /**
          * [Android Desugar](https://developer.android.com/studio/write/java8-support)
          */
-        const val androidDesugar = "1.0.9"
+        const val androidDesugar = "1.1.5"
 
         object AndroidX {
             /**
              * [AndroidX](https://developer.android.com/jetpack/androidx)
              */
             const val core = "1.1.0"
-            const val ktx = "1.6.0"
-            const val appCompat = "1.3.1"
-            const val browser = "1.2.0"
+            const val ktx = "1.7.0"
+            const val appCompat = "1.4.1"
+            const val browser = "1.4.0"
 
-            const val constraintLayout = "2.0.1"
+            const val constraintLayout = "2.1.3"
         }
 
         /**
          * [Material Android](https://github.com/material-components/material-components-android)
          */
-        const val material = "1.4.0"
+        const val material = "1.5.0"
 
         // Authorization
         /**
          * [appAuth](https://github.com/openid/AppAuth-Android)
          */
-        const val appAuth = "0.10.0"
+        const val appAuth = "0.11.1"
 
         // Serialization
         /**
          * [moshi](https://github.com/square/moshi)
          */
-        const val moshi = "1.12.0"
+        const val moshi = "1.13.0"
 
         // Crypto
         /**
          * [tink](https://github.com/google/tink)
          */
-        const val tink = "1.2.2"
+        const val tink = "1.4.0"
     }
 
     object AndroidTest {
@@ -158,6 +153,6 @@ object Version {
         /**
          * [Robolectric](https://github.com/robolectric/robolectric)
          */
-        const val robolectric = "4.5.1" // TODO figure out, why 4.6.1 breaks the tests
+        const val robolectric = "4.8"
     }
 }
