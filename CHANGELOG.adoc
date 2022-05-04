@@ -28,7 +28,7 @@ toc::[]
 
 == link:{link-repository}/releases/latest[Unreleased]
 
-See link:{link-repository}/compare/v1.14.0...main[changeset]
+See link:{link-repository}/compare/1.15.0\...main[changeset]
 
 === Added
 
@@ -38,11 +38,21 @@ See link:{link-repository}/compare/v1.14.0...main[changeset]
 
 === Removed
 
-* HC Result
-
 === Fixed
 
 === Security
+
+=== Bumped
+
+=== Migration
+
+== link:{link-repository}/tag/1.15.0[1.15.0]
+
+See link:{link-repository}/compare/v1.14.0\...1.15.0[changeset]
+
+=== Removed
+
+* HC Result
 
 === Bumped
 
@@ -64,11 +74,9 @@ See link:{link-repository}/compare/v1.14.0...main[changeset]
 * Android AppAuth 0.10.0 -> 0.11.1
 * Android Target SDK 30 -> 31
 
-=== Migration
-
 == link:{link-repository}/tag/v1.14.0[1.14.0]
 
-See link:{link-repository}/compare/v1.13.2...v1.14.0[changeset]
+See link:{link-repository}/compare/v1.13.2\...v1.14.0[changeset]
 
 === Added
 
