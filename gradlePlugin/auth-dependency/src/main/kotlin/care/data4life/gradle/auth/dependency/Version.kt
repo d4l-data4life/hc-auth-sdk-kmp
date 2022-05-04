@@ -153,6 +153,6 @@ object Version {
         /**
          * [Robolectric](https://github.com/robolectric/robolectric)
          */
-        const val robolectric = "4.5.1"
+        const val robolectric = "4.8"
     }
 }
