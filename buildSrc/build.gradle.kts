@@ -36,7 +36,7 @@ dependencies {
     implementation(care.data4life.gradle.auth.dependency.GradlePlugin.android)
 
     // d4l config
-    implementation("com.google.code.gson:gson:2.8.6")
+    implementation("com.google.code.gson:gson:2.8.9")
 
     // dependency-updates.gradle.kts
     implementation("com.github.ben-manes:gradle-versions-plugin:0.39.0")
