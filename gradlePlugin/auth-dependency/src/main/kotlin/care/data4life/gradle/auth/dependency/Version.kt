@@ -133,7 +133,7 @@ object Version {
         /**
          * [moshi](https://github.com/square/moshi)
          */
-        const val moshi = "1.12.0"
+        const val moshi = "1.13.0"
 
         // Crypto
         /**
