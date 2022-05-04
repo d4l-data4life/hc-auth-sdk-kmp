@@ -73,7 +73,15 @@ kotlin {
                 implementation(Dependency.android.tink)
             }
         }
+        val androidAndroidTestRelease by getting
+        val androidTestFixtures by getting
+        val androidTestFixturesDebug by getting
+        val androidTestFixturesRelease by getting
         val androidTest by getting {
+            dependsOn(androidAndroidTestRelease)
+            dependsOn(androidTestFixtures)
+            dependsOn(androidTestFixturesDebug)
+            dependsOn(androidTestFixturesRelease)
             dependencies {
                 implementation(Dependency.multiplatformTest.kotlin.jvm)
                 implementation(Dependency.multiplatformTest.kotlin.jvmJunit)
@@ -143,11 +151,17 @@ android {
             mapOf("clearPackageData" to "true")
         )
 
+        manifestPlaceholders["appAuthRedirectScheme"] = "com.redirectScheme.comm"
+
         buildTypes {
             getByName("debug") {
                 matchingFallbacks.addAll(
                     listOf("debug", "release")
                 )
+
+                manifestPlaceholders["redirectScheme"] = "com.redirectScheme.comm"
+                manifestPlaceholders["clientId"] = "com.redirectScheme.comm"
+                manifestPlaceholders["clientSecret"] = "com.redirectScheme.comm"
             }
         }
     }
