@@ -45,7 +45,7 @@ object Version {
             /**
              * [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
              */
-            const val coroutines = "1.5.1-native-mt"
+            const val coroutines = "1.6.0-native-mt"
 
             /**
              * [Serialization](https://github.com/Kotlin/kotlinx.serialization)
@@ -158,6 +158,6 @@ object Version {
         /**
          * [Robolectric](https://github.com/robolectric/robolectric)
          */
-        const val robolectric = "4.5.1" // TODO figure out, why 4.6.1 breaks the tests
+        const val robolectric = "4.5.1"
     }
 }
