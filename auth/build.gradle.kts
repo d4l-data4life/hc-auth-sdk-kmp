@@ -151,8 +151,6 @@ android {
             mapOf("clearPackageData" to "true")
         )
 
-        manifestPlaceholders["appAuthRedirectScheme"] = "com.redirectScheme.comm"
-
         buildTypes {
             getByName("debug") {
                 matchingFallbacks.addAll(
