@@ -84,7 +84,7 @@ object Version {
         /**
          * [scribe](https://github.com/scribejava/scribejava)
          */
-        const val scribe = "6.1.0"
+        const val scribe = "6.3.0"
 
         // Serialization
         /**
