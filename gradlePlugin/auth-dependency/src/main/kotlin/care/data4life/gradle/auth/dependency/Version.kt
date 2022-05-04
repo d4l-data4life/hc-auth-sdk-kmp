@@ -127,7 +127,7 @@ object Version {
         /**
          * [appAuth](https://github.com/openid/AppAuth-Android)
          */
-        const val appAuth = "0.10.0"
+        const val appAuth = "0.11.1"
 
         // Serialization
         /**
