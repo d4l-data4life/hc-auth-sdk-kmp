@@ -45,7 +45,7 @@ dependencies {
     // publishing.gradle.kts
     implementation("org.eclipse.jgit:org.eclipse.jgit:5.11.0.202103091610-r")
     // quality-spotless.gradle.kts
-    implementation("org.eclipse.jgit:org.eclipse.jgit:6.1.0.202203080745-r")
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:6.4.2")
     implementation("com.pinterest:ktlint:0.44.0")
     // versioning.gradle.kts
     implementation("care.data4life.gradle.gitversion:gradle-git-version:0.12.4-d4l")
