@@ -29,11 +29,11 @@ object Version {
     /**
      * [Kotlin](https://github.com/JetBrains/kotlin)
      */
-    const val kotlin = "1.6.10"
+    const val kotlin = "1.6.21"
 
     object GradlePlugin {
         const val kotlin = Version.kotlin
-        const val android = "7.1.3"
+        const val android = "7.3.0-beta02"
     }
 
     object Multiplatform {
@@ -45,7 +45,7 @@ object Version {
             /**
              * [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
              */
-            const val coroutines = "1.6.0-native-mt"
+            const val coroutines = "1.6.2"
 
             /**
              * [Serialization](https://github.com/Kotlin/kotlinx.serialization)
@@ -115,13 +115,13 @@ object Version {
             const val appCompat = "1.4.1"
             const val browser = "1.4.0"
 
-            const val constraintLayout = "2.1.3"
+            const val constraintLayout = "2.1.4"
         }
 
         /**
          * [Material Android](https://github.com/material-components/material-components-android)
          */
-        const val material = "1.5.0"
+        const val material = "1.6.1"
 
         // Authorization
         /**
