@@ -36,4 +36,4 @@ jobs:
       - name: Build
         run: ./gradlew build
       - name: Publish Snapshot to Maven Repo
-        run: ./gradlew publishSnapshot -Dorg.gradle.parallel=false
+        run: ./gradlew publishSnapshot
