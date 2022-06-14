@@ -21,8 +21,6 @@
     >
 
     <application>
-        <activity android:name="care.data4life.sdk.auth.LoginActivity"/>
-
         <activity
             android:name="net.openid.appauth.RedirectUriReceiverActivity"
             tools:node="replace"
