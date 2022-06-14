@@ -61,14 +61,11 @@ kotlin {
             dependencies {
                 implementation(Dependency.multiplatform.kotlin.stdLib.android)
 
-                implementation(Dependency.android.androidX.ktx)
                 implementation(Dependency.multiplatform.kotlin.coroutines.android)
 
                 implementation(Dependency.multiplatform.d4l.util.android)
                 implementation(Dependency.multiplatform.d4l.securestore.android)
 
-                implementation(Dependency.android.androidX.appCompat)
-                implementation(Dependency.android.androidX.browser)
                 implementation(Dependency.android.appAuth)
                 implementation(Dependency.android.tink)
             }

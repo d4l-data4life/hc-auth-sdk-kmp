@@ -99,29 +99,10 @@ object Version {
 
     object Android {
 
-        val androidX = AndroidX
-
         /**
          * [Android Desugar](https://developer.android.com/studio/write/java8-support)
          */
         const val androidDesugar = "1.1.5"
-
-        object AndroidX {
-            /**
-             * [AndroidX](https://developer.android.com/jetpack/androidx)
-             */
-            const val core = "1.1.0"
-            const val ktx = "1.7.0"
-            const val appCompat = "1.4.1"
-            const val browser = "1.4.0"
-
-            const val constraintLayout = "2.1.4"
-        }
-
-        /**
-         * [Material Android](https://github.com/material-components/material-components-android)
-         */
-        const val material = "1.6.1"
 
         // Authorization
         /**

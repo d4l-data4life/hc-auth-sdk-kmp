@@ -122,25 +122,11 @@ object Dependency {
 
     object Android {
 
-        val androidX = AndroidX
-
         // Kotlin
         const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Version.kotlin}"
 
         // Android
         const val desugar = "com.android.tools:desugar_jdk_libs:${Version.android.androidDesugar}"
-
-        object AndroidX {
-            const val ktx = "androidx.core:core-ktx:${Version.android.androidX.ktx}"
-            const val appCompat = "androidx.appcompat:appcompat:${Version.android.androidX.appCompat}"
-            const val browser = "androidx.browser:browser:${Version.android.androidX.browser}"
-
-            // Layout
-            const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Version.android.androidX.constraintLayout}"
-        }
-
-        // Material
-        const val material = "com.google.android.material:material:${Version.android.material}"
 
         // Authorization
         const val appAuth = "net.openid:appauth:${Version.android.appAuth}"

@@ -38,6 +38,12 @@ See link:{link-repository}/compare/1.15.0\...main[changeset]
 
 === Removed
 
+* Material dependency
+* AndroidX ConstraintLayout dependency
+* AndroidX AppCompat dependency
+* AndroidX Browser dependency
+* AndroidX Ktx dependency
+
 === Fixed
 
 === Security
