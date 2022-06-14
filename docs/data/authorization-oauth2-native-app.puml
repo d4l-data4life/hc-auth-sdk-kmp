@@ -1,0 +1,62 @@
+@startuml
+!include _style.iuml
+
+title __OAuth 2.0 for Native Apps (RFC8252)__
+
+autonumber
+
+actor "PHDC User\n(Resource owner)" as User
+
+box "User Device"
+    participant "PHDC Client App" as Client
+    participant "PHDC AuthWebApp\n(Browser)" as Browser
+end box
+
+participant "PHDC Authorization Service" as Service
+participant "PHDC Resource Service" as Resource
+
+User -> Client: Access app
+
+activate Client
+Client -> Service: Authorization request (with Secret)
+
+activate Service
+Service -> Client: Authentication request redirect (with Cookie)
+
+deactivate Service
+
+Client -> Browser: Authentication request (with Cookie)
+
+activate Browser
+User -> Browser: User authenticates
+
+Browser -> Service: Authorization request
+
+activate Service
+Service -> Browser: Authorization code
+
+deactivate Service
+Browser -> Client: Authorization code
+
+deactivate Browser
+Client -> Service: Authorization code (with secret)
+
+activate Service
+Service -> Client: Access token, refresh token
+
+deactivate Service
+
+group Authorized
+    Client -> Resource: Resource request with access token
+    activate Resource
+
+    Resource -> Service: Validate access token
+    activate Service
+
+    Service -> Resource: Valid
+    deactivate Service
+
+    Resource -> Client: Resource response
+    deactivate Resource
+end
+@enduml

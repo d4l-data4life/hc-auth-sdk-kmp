@@ -1,0 +1,77 @@
+@startuml
+' re-usable color definitions for D4L
+!define COLOR_PRIMARY_BLUE #000080
+!define COLOR_PRIMARY_CORAL #FF5F5A
+!define COLOR_PRIMARY_ROSE #FFD2C3
+
+!define COLOR_SECONDARY_PASTEL_BLUE #BDD4F0
+!define COLOR_SECONDARY_PASTEL_GREEN #C8EECB
+!define COLOR_SECONDARY_PASTEL_LIME #EBF0C8
+!define COLOR_SECONDARY_PASTEL_YELLOW #FFEBAA
+!define COLOR_SECONDARY_PASTEL_ROSE #F5E3D5
+!define COLOR_SECONDARY_PASTEL_VIOLET #E4CFCF
+
+'
+' Overview
+'
+
+skinparam Shadowing false
+
+skinparam Actor {
+    BorderColor COLOR_PRIMARY_BLUE
+    BackgroundColor COLOR_PRIMARY_ROSE
+    FontSize 15
+    FontColor black
+}
+
+skinparam Cloud {
+    BackgroundColor COLOR_SECONDARY_PASTEL_BLUE
+}
+
+skinparam Component {
+    Style uml2
+
+    BorderColor COLOR_PRIMARY_BLUE
+    BackgroundColor COLOR_SECONDARY_PASTEL_YELLOW
+
+    NodeBorderColor COLOR_PRIMARY_BLUE
+}
+
+skinparam Node {
+    BorderColor COLOR_PRIMARY_BLUE
+}
+
+skinparam Rectangle {
+    BorderColor COLOR_PRIMARY_BLUE
+}
+
+skinparam Sequence {
+    ArrowColor COLOR_PRIMARY_CORAL
+    ArrowThickness 1
+    ArrowFontSize 14
+
+    BoxBackgroundColor COLOR_SECONDARY_PASTEL_YELLOW
+    BoxBorderColor transparent
+    BoxFontSize 16
+
+    GroupBorderColor COLOR_PRIMARY_BLUE
+    GroupBorderThickness 1
+    GroupHeaderFontSize 14
+    GroupHeaderFontStyle normal
+    GroupBodyBackgroundColor COLOR_SECONDARY_PASTEL_LIME
+
+    LifeLineBorderColor COLOR_PRIMARY_BLUE
+    LifeLineBackgroundColor COLOR_PRIMARY_ROSE
+    LifeLineBorderThickness 2
+
+    MessageAlign center
+
+    ParticipantBorderColor COLOR_PRIMARY_BLUE
+    ParticipantBackgroundColor COLOR_SECONDARY_PASTEL_BLUE
+    ParticipantPadding 10
+    ParticipantFontSize 15
+
+    TitleFontSize 18
+}
+
+@enduml

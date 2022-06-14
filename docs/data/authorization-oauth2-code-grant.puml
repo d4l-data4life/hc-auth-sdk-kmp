@@ -1,0 +1,49 @@
+@startuml
+!include _style.iuml
+
+title __OAuth 2.0 Code Grant (RFC6749)__
+
+autonumber
+
+actor "PHDC User\n(Resource owner)" as User
+
+participant "PHDC Client" as Client
+participant "PHDC Authorization Service" as Service
+participant "PHDC Resource Service" as Resource
+
+User -> Client: Access client
+
+activate Client
+Client -> Service: Authorization code request
+activate Service
+
+Service -> Client: Authentication request
+Client -> User: Authentication request
+
+User -> Client: User authenticates
+Client -> Service: User authenticates
+
+Service -> Client: Authorization Code
+deactivate Service
+
+Client -> Service: Authorization Code
+activate Service
+Service -> Client: Access token, refresh token
+deactivate Service
+
+skinparam groupBackgroundColor yellow
+
+group Authorized
+    Client -> Resource: Resource request with access token
+    activate Resource
+
+    Resource -> Service: Validate access token
+    activate Service
+
+    Service -> Resource: Valid
+    deactivate Service
+
+    Resource -> Client: Resource response
+    deactivate Resource
+end
+@enduml
