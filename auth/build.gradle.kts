@@ -156,10 +156,6 @@ android {
                 matchingFallbacks.addAll(
                     listOf("debug", "release")
                 )
-
-                manifestPlaceholders["redirectScheme"] = "com.redirectScheme.comm"
-                manifestPlaceholders["clientId"] = "com.redirectScheme.comm"
-                manifestPlaceholders["clientSecret"] = "com.redirectScheme.comm"
             }
         }
     }
