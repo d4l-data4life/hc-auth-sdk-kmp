@@ -29,17 +29,17 @@ To end the login you need to call `finishLogin(authData, callback)` with the int
 The callback will indicate if the authorization successfully finished.
 
 ```
-@Override protected void onActivityResult(int requestCode, int resultCode, Intent data) { 
-    super.onActivityResult(requestCode, resultCode, data); 
-    if (requestCode == GC_AUTH) { 
-        if (resultCode == RESULT_OK) { 
-            client.finishLogin(data,callback); 
-        } else if (data.getExtras() != null) { 
-            if (data.getExtras().containsKey("error")) { 
-                Snackbar.make(mRootCL, "Failed to log in to Data4Life", Snackbar.LENGTH_SHORT).show(); 
-            } else if (data.getExtras().containsKey("canceled")) { 
-                Snackbar.make(mRootCL, "User canceled authorization request", Snackbar.LENGTH_SHORT).show(); 
-            } 
+@Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == GC_AUTH) {
+        if (resultCode == RESULT_OK) {
+            client.finishLogin(data,callback);
+        } else if (data.getExtras() != null) {
+            if (data.getExtras().containsKey("error")) {
+                Snackbar.make(mRootCL, "Failed to log in to Data4Life", Snackbar.LENGTH_SHORT).show();
+            } else if (data.getExtras().containsKey("canceled")) {
+                Snackbar.make(mRootCL, "User canceled authorization request", Snackbar.LENGTH_SHORT).show();
+            }
         }
     }
 }
@@ -50,5 +50,3 @@ The callback will indicate if the authorization successfully finished.
 ![OAuth 2.0 - Native App](./images/authorization-oauth2-native-app.png)
 
 ![OAuth 2.0 - Code Grant](./images/authorization-oauth2-code-grant.png)
-
-
