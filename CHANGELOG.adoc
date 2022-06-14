@@ -34,10 +34,13 @@ See link:{link-repository}/compare/1.15.0\...main[changeset]
 
 === Changed
 
+* *_BREAKING_* login flow without LoginActivity. This requires to finishLogin from client side by calling `finishLogin`
+
 === Deprecated
 
 === Removed
 
+* LoginActivity
 * Material dependency
 * AndroidX ConstraintLayout dependency
 * AndroidX AppCompat dependency

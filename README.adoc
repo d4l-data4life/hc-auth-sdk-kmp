@@ -27,7 +27,7 @@ endif::[]
         <h3>Data4Life Auth SDK</h3>
     </p>
     <p><!-- PROJECT DESCRIPTION -->
-        TODO
+        Authorization SDK for communicating with PHDC using OAuth 2.0
     </p>
     <p><!-- PROJECT DOCUMENTATION -->
         <a href="README.adoc"><strong>Explore the docs »</strong></a>
@@ -61,11 +61,12 @@ toc::[]
 
 == About The Project
 
-TODO
+Authorization SDK for communicating with PHDC using link:https://tools.ietf.org/html/rfc6749[OAuth 2.0]. For Android it implements link:https://tools.ietf.org/html/rfc8252[RFC 8252 - OAuth 2.0 for Native Apps] using link:https://github.com/openid/AppAuth-Android[AppAuth]. Java is supporting the OAuth 2.0 Code Grant using link:https://github.com/scribejava/scribejava[ScribeJava].
 
 === Features
 
-* TODO
+* Android: OAuth 2.0 - Native App flow
+* Java: OAuth 2.0 - Code Grant flow
 
 === Built With
 
@@ -77,9 +78,9 @@ Instructions how to get software up and running.
 
 === Prerequisites
 
-* link:https://developer.android.com/studio#downloads[Android Studio 7.1.3]
+* link:https://developer.android.com/studio#downloads[Android Studio 7.3.0-beta03]
 * link:https://adoptopenjdk.net/[Java 11] | link:https://developer.android.com/studio/write/java8-support[Limitations of Java language features and APIs] | https://jakewharton.com/d8-library-desugaring/[Desugaring]
-* link:https://kotlinlang.org/[Kotlin 1.6.10]
+* link:https://kotlinlang.org/[Kotlin 1.6.21]
 * Android 6.0 (API 23) to Android 11.0 (API 31)
 
 === Installation
@@ -162,15 +163,47 @@ In case you target Android 11+ and experience a `ActivityNotFoundException`. Thi
 
 == Usage
 
-TODO
+The authorization request is started with the following code sample which launches an link:https://developer.chrome.com/docs/android/custom-tabs/[Custom Tab]
+to present the login screen to the user for authentication.
+
+[source]
+----
+Intent authIntent = Data4LifeClient.getInstance().getLoginIntent(null);
+startActivityForResult(authIntent,requestCode);
+----
+
+Once the user finished, canceled or an error occurred during the browser login, the SDK sends the response to the
+integrator application in the `onActivityResult(…)` method.
+
+The authorization results can be the following:
+
+- `Activity.RESULT_OK` – when the login is successful.
+- `Activity.RESULT_CANCELED` – when the login fails, with additional payload in `data`, as shown in the example.
+
+To end the login you need to call `finishLogin(authData, callback)` with the intent received in `onActivityResult(…)`.
+The callback will indicate if the authorization successfully finished.
+
+[source]
+----
+@Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    if (requestCode == GC_AUTH) {
+        if (resultCode == RESULT_OK) {
+            client.finishLogin(data,callback);
+        } else if (data.getExtras() != null) {
+            if (data.getExtras().containsKey("error")) {
+                Snackbar.make(mRootCL, "Failed to log in to Data4Life", Snackbar.LENGTH_SHORT).show();
+            } else if (data.getExtras().containsKey("canceled")) {
+                Snackbar.make(mRootCL, "User canceled authorization request", Snackbar.LENGTH_SHORT).show();
+            }
+        }
+    }
+}
+----
 
 == Roadmap
 
 This project is work in progress. We are working on adding more functionality, guidelines, documentation and other improvements.
-
-Next planed features:
-
-* TODO
 
 Also see the open link:{link-repository}/issues[issues] for a list of proposed features and known issues.
 

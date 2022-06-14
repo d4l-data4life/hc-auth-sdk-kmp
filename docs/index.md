@@ -1,11 +1,10 @@
 # Authorization Documentation
 
-This section covers the authorization project features of the SDK. Authentication is the process of verifying who a user
-is, while authorization is the process of verifying what they have access to.
+This section covers the authorization project features of the SDK. Authentication is the process of verifying who a user is, while authorization is the process of verifying what they have access to.
 
 ## Starting authorization requests
 
-The authorization request is started with the following code sample which launches an `Activity`
+The authorization request is started with the following code sample which launches an [Custom Tab](https://developer.chrome.com/docs/android/custom-tabs/)
 to present the login screen to the user for authentication.
 
 ```
