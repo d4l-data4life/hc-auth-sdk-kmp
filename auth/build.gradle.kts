@@ -31,6 +31,8 @@ plugins {
 
 group = LibraryConfig.group
 
+val d4lClientConfig = D4LConfigHelper.loadClientConfigAndroid("$rootDir")
+
 kotlin {
     android {
         publishLibraryVariants("release", "debug")
@@ -183,7 +185,6 @@ android {
     }
 }
 
-val d4lClientConfig = D4LConfigHelper.loadClientConfigAndroid("$rootDir")
 val jvmAssetsPath = "${projectDir}/src/jvmTest/resources"
 
 val provideTestConfig: Task by tasks.creating {
