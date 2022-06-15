@@ -33,7 +33,7 @@ object Version {
 
     object GradlePlugin {
         const val kotlin = Version.kotlin
-        const val android = "7.3.0-beta03"
+        const val android = "7.3.0-beta02"
     }
 
     object Multiplatform {
