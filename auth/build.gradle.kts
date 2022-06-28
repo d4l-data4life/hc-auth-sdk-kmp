@@ -31,6 +31,8 @@ plugins {
 
 group = LibraryConfig.group
 
+val d4lClientConfig = D4LConfigHelper.loadClientConfigAndroid("$rootDir")
+
 kotlin {
     android {
         publishLibraryVariants("release", "debug")
@@ -61,14 +63,11 @@ kotlin {
             dependencies {
                 implementation(Dependency.multiplatform.kotlin.stdLib.android)
 
-                implementation(Dependency.android.androidX.ktx)
                 implementation(Dependency.multiplatform.kotlin.coroutines.android)
 
                 implementation(Dependency.multiplatform.d4l.util.android)
                 implementation(Dependency.multiplatform.d4l.securestore.android)
 
-                implementation(Dependency.android.androidX.appCompat)
-                implementation(Dependency.android.androidX.browser)
                 implementation(Dependency.android.appAuth)
                 implementation(Dependency.android.tink)
             }
@@ -156,10 +155,6 @@ android {
                 matchingFallbacks.addAll(
                     listOf("debug", "release")
                 )
-
-                manifestPlaceholders["redirectScheme"] = "com.redirectScheme.comm"
-                manifestPlaceholders["clientId"] = "com.redirectScheme.comm"
-                manifestPlaceholders["clientSecret"] = "com.redirectScheme.comm"
             }
         }
     }
@@ -190,7 +185,6 @@ android {
     }
 }
 
-val d4lClientConfig = D4LConfigHelper.loadClientConfigAndroid("$rootDir")
 val jvmAssetsPath = "${projectDir}/src/jvmTest/resources"
 
 val provideTestConfig: Task by tasks.creating {

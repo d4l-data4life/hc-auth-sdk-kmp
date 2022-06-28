@@ -54,37 +54,25 @@ actual class AuthorizationService internal constructor(
         )
 
     fun loginIntent(
-        context: Context,
         scopes: Set<String>?,
         publicKey: String,
-        authListener: AuthorizationListener
     ): Intent {
-        val loginIntent = Intent(context, LoginActivity::class.java)
-        val authIntent = authorizationIntent(context, scopes?.toTypedArray(), publicKey)
-        loginIntent.putExtra(LoginActivity.AUTHORIZATION_INTENT, authIntent)
-        LoginActivity.authorizationListener = authListener
-        return loginIntent
-    }
-
-    private fun authorizationIntent(
-        context: Context,
-        scopes: Array<String>?,
-        publicKey: String
-    ): Intent {
-        val s = scopes ?: Authorization.defaultScopesArray
+        val scopesSet: Set<String> = scopes ?: Authorization.defaultScopes
 
         val additionalParameters = HashMap<String, String>()
         additionalParameters[PARAMETER_PUBLIC_KEY] = publicKey
-        val authRequest = AuthorizationRequest.Builder(
+
+        val request = AuthorizationRequest.Builder(
             appAuthServiceConfig,
             configuration.clientId,
             ResponseTypeValues.CODE,
             Uri.parse(configuration.callbackUrl)
         )
             .setAdditionalParameters(additionalParameters)
-            .setScopes(s.asList())
+            .setScopes(scopesSet.toList())
             .build()
-        return appAuthService.getAuthorizationRequestIntent(authRequest)
+
+        return appAuthService.getAuthorizationRequestIntent(request)
     }
 
     fun finishLogin(authData: Intent, callback: Callback) {
@@ -211,10 +199,5 @@ actual class AuthorizationService internal constructor(
     interface Callback {
         fun onSuccess()
         fun onError(error: Throwable)
-    }
-
-    interface AuthorizationListener {
-        fun onSuccess(authData: Intent?, loginFinishedCbk: Callback)
-        fun onError(error: Throwable, callback: Callback)
     }
 }

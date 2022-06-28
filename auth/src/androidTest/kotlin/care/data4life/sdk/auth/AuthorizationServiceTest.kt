@@ -16,10 +16,8 @@
 
 package care.data4life.sdk.auth
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import androidx.test.core.app.ApplicationProvider
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -36,7 +34,6 @@ import kotlin.test.assertTrue
 @RunWith(RobolectricTestRunner::class)
 class AuthorizationServiceTest {
 
-    private lateinit var mockContext: Context
     private lateinit var authService: AuthorizationService
     private lateinit var serviceConfig: AuthorizationServiceConfiguration
     private lateinit var storage: AuthorizationContract.Storage
@@ -47,8 +44,6 @@ class AuthorizationServiceTest {
 
     @Before
     fun setUp() {
-        mockContext = ApplicationProvider.getApplicationContext()
-
         appAuthService = mockk()
         authService = mockk()
         storage = mockk()
@@ -213,14 +208,12 @@ class AuthorizationServiceTest {
         // Given
         val mockedIntent = mockk<Intent>()
         every { appAuthService.getAuthorizationRequestIntent(any()) } returns mockedIntent
-        val listener = mockk<AuthorizationService.AuthorizationListener>()
 
         // When
-        val actual = sut.loginIntent(mockContext, emptySet(), IGNORE, listener)
+        val actual = sut.loginIntent(emptySet(), IGNORE)
 
         // Then
         assertEquals(Intent::class.java, actual.javaClass)
-        assertEquals(LoginActivity.authorizationListener, listener)
     }
 
     companion object {

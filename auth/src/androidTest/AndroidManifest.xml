@@ -32,31 +32,26 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
 
-                <data android:scheme="${redirectScheme}"/>
+                <data android:scheme="com.example#Android"/>
             </intent-filter>
         </activity>
 
         <meta-data
             android:name="care.data4life.sdk.CLIENT_ID"
-            android:value="${clientId}"
+            tools:replace="android:value"
+            android:value="clientId"
             />
         <meta-data
             android:name="care.data4life.sdk.CLIENT_SECRET"
-            android:value="${clientSecret}"
+            tools:replace="android:value"
+            android:value="clientSecret"
             />
         <meta-data
             android:name="care.data4life.sdk.REDIRECT_URL"
-            android:value="${redirectScheme}://oauth"
+            tools:replace="android:value"
+            android:value="com.example://oauth"
             />
 
     </application>
-
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="https" />
-        </intent>
-    </queries>
 
 </manifest>
