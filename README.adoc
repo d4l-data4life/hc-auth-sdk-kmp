@@ -81,7 +81,7 @@ Instructions how to get software up and running.
 * link:https://developer.android.com/studio#downloads[Android Studio - Chipmunk - 2021.2.1]
 * link:https://adoptopenjdk.net/[Java 11] | link:https://developer.android.com/studio/write/java8-support[Limitations of Java language features and APIs] | https://jakewharton.com/d8-library-desugaring/[Desugaring]
 * link:https://kotlinlang.org/[Kotlin 1.6.21]
-* Android 6.0 (API 23) to Android 11.0 (API 31)
+* Android 6.0 (API 23) to Android 12L (API 32)
 
 === Installation
 

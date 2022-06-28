@@ -53,6 +53,7 @@ See link:{link-repository}/compare/v1.15.0\...1.16.0[changeset]
 === Changed
 
 * *_BREAKING_* login flow without LoginActivity. This requires to finishLogin from client side by calling `finishLogin`
+* Android target SKD 31 -> 32
 
 === Removed
 
