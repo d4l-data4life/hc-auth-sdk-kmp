@@ -28,15 +28,32 @@ toc::[]
 
 == link:{link-repository}/releases/latest[Unreleased]
 
-See link:{link-repository}/compare/1.15.0\...main[changeset]
+See link:{link-repository}/compare/1.16.0\...main[changeset]
 
 === Added
 
 === Changed
 
-* *_BREAKING_* login flow without LoginActivity. This requires to finishLogin from client side by calling `finishLogin`
-
 === Deprecated
+
+=== Removed
+
+=== Fixed
+
+=== Security
+
+=== Bumped
+
+=== Migration
+
+== link:{link-repository}/tag/1.16.0[1.16.0]
+
+See link:{link-repository}/compare/v1.15.0\...1.16.0[changeset]
+
+=== Changed
+
+* *_BREAKING_* login flow without LoginActivity. This requires to finishLogin from client side by calling `finishLogin`
+* Android target SDK 31 -> 32
 
 === Removed
 
@@ -47,21 +64,13 @@ See link:{link-repository}/compare/1.15.0\...main[changeset]
 * AndroidX Browser dependency
 * AndroidX Ktx dependency
 
-=== Fixed
-
-=== Security
-
 === Bumped
 
 * Android Gradle Plugin 7.1.3 -> 7.2.0
 * Kotlin 1.6.10 -> 1.6.21
 * Kotlin Coroutines 1.6.0 -> 1.6.2
-* AndroidX ConstraintLayout 2.1.3 -> 2.1.4
-* Material 1.5.0 -> 1.6.1
 * Spotless Gradle plugin 6.4.2 -> 6.5.1
 * Ktlint 0.44.0 -> 0.45.2
-
-=== Migration
 
 == link:{link-repository}/tag/1.15.0[1.15.0]
 
