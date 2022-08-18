@@ -18,8 +18,8 @@ package care.data4life.sdk.auth
 
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.Test
 import kotlin.test.assertEquals
+import org.junit.Test
 
 class AuthorizationApiTest {
 

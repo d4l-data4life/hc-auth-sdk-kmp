@@ -26,7 +26,13 @@ class Authorization {
 
         @JvmStatic
         val defaultScopes = setOf(
-            "perm:r", "rec:r", "rec:w", "attachment:r", "attachment:w", "user:r", "user:q"
+            "perm:r",
+            "rec:r",
+            "rec:w",
+            "attachment:r",
+            "attachment:w",
+            "user:r",
+            "user:q"
         )
     }
 }
