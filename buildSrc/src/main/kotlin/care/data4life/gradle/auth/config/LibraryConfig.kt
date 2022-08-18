@@ -57,8 +57,8 @@ object LibraryConfig {
 
     object AndroidLibraryConfig {
         const val minSdkVersion = 23
-        const val compileSdkVersion = 32
-        const val targetSdkVersion = 32
+        const val compileSdkVersion = 33
+        const val targetSdkVersion = 33
 
         const val resourcePrefix = "hc_auth_"
     }

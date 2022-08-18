@@ -29,11 +29,11 @@ object Version {
     /**
      * [Kotlin](https://github.com/JetBrains/kotlin)
      */
-    const val kotlin = "1.6.21"
+    const val kotlin = "1.7.10"
 
     object GradlePlugin {
         const val kotlin = Version.kotlin
-        const val android = "7.2.0"
+        const val android = "7.2.2"
     }
 
     object Multiplatform {
@@ -45,17 +45,17 @@ object Version {
             /**
              * [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
              */
-            const val coroutines = "1.6.2"
+            const val coroutines = "1.6.3"
 
             /**
              * [Serialization](https://github.com/Kotlin/kotlinx.serialization)
              */
-            const val serialization = "1.3.2"
+            const val serialization = "1.3.3"
 
             /**
              * [DateTime](https://github.com/Kotlin/kotlinx-datetime)
              */
-            const val dateTime = "0.3.2"
+            const val dateTime = "0.4.0"
         }
 
         object D4L {
@@ -76,7 +76,7 @@ object Version {
         /**
          * [mockk](http://mockk.io)
          */
-        const val mockK = "1.10.6"
+        const val mockK = "1.12.5"
     }
 
     object Jvm {
@@ -134,6 +134,6 @@ object Version {
         /**
          * [Robolectric](https://github.com/robolectric/robolectric)
          */
-        const val robolectric = "4.8"
+        const val robolectric = "4.8.1"
     }
 }

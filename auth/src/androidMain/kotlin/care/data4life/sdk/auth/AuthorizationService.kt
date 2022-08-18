@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import care.data4life.sdk.auth.storage.InMemoryAuthStorage
+import kotlin.coroutines.suspendCoroutine
 import kotlinx.coroutines.runBlocking
 import net.openid.appauth.AuthState
 import net.openid.appauth.AuthorizationRequest
@@ -32,7 +33,6 @@ import net.openid.appauth.ResponseTypeValues
 import net.openid.appauth.TokenRequest
 import net.openid.appauth.TokenResponse
 import org.json.JSONException
-import kotlin.coroutines.suspendCoroutine
 
 actual class AuthorizationService internal constructor(
     private val appAuthService: AppAuthService,
@@ -55,7 +55,7 @@ actual class AuthorizationService internal constructor(
 
     fun loginIntent(
         scopes: Set<String>?,
-        publicKey: String,
+        publicKey: String
     ): Intent {
         val scopesSet: Set<String> = scopes ?: Authorization.defaultScopes
 
