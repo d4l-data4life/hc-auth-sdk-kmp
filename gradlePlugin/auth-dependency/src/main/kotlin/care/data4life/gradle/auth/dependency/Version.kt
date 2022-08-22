@@ -63,12 +63,12 @@ object Version {
             /**
              * [hc-securestore-kmp](https://github.com/d4l-data4life/hc-securestore-kmp)
              */
-            const val securestore = "1.15.0"
+            const val securestore = "1.16.0"
 
             /**
              * [hc-util-kmp](https://github.com/d4l-data4life/hc-util-kmp)
              */
-            const val utilSdk = "1.13.0"
+            const val utilSdk = "1.14.0"
         }
     }
 
